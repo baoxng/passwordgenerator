@@ -14,7 +14,7 @@ var generateBtn = document.querySelector("#generate");
 var lowerCase= "abcdefghijklmnopqrstuvwxyz";
 var upperCase= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var specialCharacter= "!@#$%^&*()_+?><:;-";
-var numbers= "0123456789"; */
+var number= "0123456789"; */
 
 
 // To prompt password length
@@ -29,6 +29,14 @@ var passLength= prompt ("Select password length, must contain 8-128 characters."
     
   }
   
+  //Connect all functions into one random
+  const randomPass ={
+    lower: getlowerCase,
+    upper: getupperCase,
+    special: getspecialCharacter,
+    number: getnumber
+  };
+
 
   // Function to get random lower case.
   function getlowerCase() {
@@ -53,9 +61,9 @@ var passLength= prompt ("Select password length, must contain 8-128 characters."
 
   // Function to get random numbers.
 
-  function getnumbers() {
-    var numbers= "0123456789";
-    return numbers[Math.floor(Math.random() * numbers.length)];
+  function getnumber() {
+    var number= "0123456789";
+    return number[Math.floor(Math.random() * number.length)];
   }
 
 
