@@ -10,11 +10,11 @@ var generateBtn = document.querySelector("#generate");
 
 }
 
-//Variables for password
+/*Variables for password
 var lowerCase= "abcdefghijklmnopqrstuvwxyz";
 var upperCase= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var specialCharacter= "!@#$%^&*()_+?><:;-";
-var numbers= "0123456789";
+var numbers= "0123456789"; */
 
 
 // To prompt password length
@@ -30,20 +30,20 @@ var passLength= prompt ("Select password length, must contain 8-128 characters."
   }
   
 
-  // Prompt to see if lower case should be included.
+  // Function to get random lower case.
   function getlowerCase() {
     var lowerCase= "abcdefghijklmnopqrstuvwxyz";
     return lowerCase[Math.floor(Math.random() * lowerCase.length)];
     
   }
 
-  //Prompt to see if upper case should be included in password.
+  //Function to get random upper case.
   function getupperCase() {
     var upperCase= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     return upperCase[Math.floor(Math.random() * upperCase.length)];
   }
 
-  //Propmt to see if special character should be included in password.
+  //Function to get random special characters.
 
   function getspecialCharacter() {
     var specialCharacter= "!@#$%^&*()_+?><:;-";
@@ -51,12 +51,13 @@ var passLength= prompt ("Select password length, must contain 8-128 characters."
   }
 
 
-  // Prompt to see if numbers should be included in password.
+  // Function to get random numbers.
 
   function getnumbers() {
     var numbers= "0123456789";
     return numbers[Math.floor(Math.random() * numbers.length)];
   }
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
