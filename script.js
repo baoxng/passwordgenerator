@@ -65,7 +65,10 @@ var passwordText= document.querySelector ("#password");
 
       console.log("typescount", typeCount);
 
-      const typesArr = [{lowerCase}, {upperCase}, {specialCharacter}, {number}];
+      const typesArr = [{lowerCase}, {upperCase}, {specialCharacter}, {number}].filter(
+        item => Object.values(item)[0]
+        ); 
+     
 
       console.log("typesArry", typesArr);
 
