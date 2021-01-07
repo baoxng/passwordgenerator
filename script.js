@@ -16,19 +16,34 @@ var upperCase= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var specialCharacter= "!@#$%^&*()_+?><:;-";
 var number= "0123456789"; */
 
-
 // To prompt password length
-var passLength= prompt ("Select password length, must contain 8-128 characters.")
-
-  if ((passLength >= 8) && (passLength <= 128)){
+var passLength= ""
+ /* if ((passLength >= 8) && (passLength <= 128)){
     alert ("Requirment met.")
   }
 
   else {
     alert (" Password length must be 8-128 characters long!")
     
-  }
-  
+  } */
+
+  //Loop Password prompt until condition is true.
+
+    var passLength = prompt ("Select password length, must enter a number between 8 and 128.")
+
+    while ((passLength <= 8) || (passLength >= 128)) {
+      alert (" Password length must be a number from 8 to 128!");
+      
+    }
+
+
+   
+
+
+// Add event listener to generate button
+  generateBtn.addEventListener("click", writePassword);
+
+
   //Connect all functions into one random
   const randomPass ={
     lower: getlowerCase,
@@ -67,6 +82,4 @@ var passLength= prompt ("Select password length, must contain 8-128 characters."
   }
 
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
 
