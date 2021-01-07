@@ -33,7 +33,7 @@ var passLength= ""
 
     while ((passLength <= 8) || (passLength >= 128)) {
       alert (" Password length must be a number from 8 to 128!");
-      
+      passLength = prompt ("Select password length, must enter a number between 8 and 128.")
     }
 
 
