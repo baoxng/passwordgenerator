@@ -1,6 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var passwordText= document.querySelector ("#password");
+
 
 // Write password to the #password input 
   function writePassword() {
@@ -8,7 +8,7 @@ var passwordText= document.querySelector ("#password");
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
   } 
-  
+
 
 
   //Loop Password length prompt until condition is met.
@@ -35,97 +35,88 @@ var passwordText= document.querySelector ("#password");
 
     alert ("Click on Generate Password button to get your password.")
  
-    var length = passLength; 
-    var lowerCase = passlCase;
-    var upperCase = passuCase;
-    var specialCharacter= passspecialC;
-    var number = passnumber;
+    var lengthEl = +passLength; 
+    var lowerCaseEl = passlCase;
+    var upperCaseEl = passuCase;
+    var specialCharacterEl= passspecialC;
+    var numberEl = passnumber;
+    var passwordText = document.querySelector("#password");
 
- 
-
-// Add event listener to generate button
-  generateBtn.addEventListener("click", () => {
-    const charalength = +length;
-    const haslCase = lowerCase; 
-    const hasuCase = upperCase; 
-    const hasspecial = specialCharacter; 
-    const hasnumber = number; 
-
-    passwordText = generatePassword(haslCase, hasuCase, hasspecial, hasnumber);
-
-  });
-
-  
-  //Generate password function.
-    function generatePassword (lowerCase, upperCase, specialCharacter, number) {
-      
-      let generatePassword= "";
-
-      const typeCount = lowerCase + upperCase + specialCharacter + number;
-
-      console.log("typescount", typeCount);
-
-      const typesArr = [{lowerCase}, {upperCase}, {specialCharacter}, {number}].filter(
-        item => Object.values(item)[0]
-        ); 
-     
-
-      console.log("typesArry", typesArr);
-
-    }
-
-
-    //password = generatePassword (
-      //passLength, passlCase, passuCase, passspecialC, passnumber
-    
-
-
-
- // passwordText.innerText = generatePassword (passLength, passlCase, passuCase, passspecialC, passnumber);
-
-  //Generate password function.
-
-
- /* function generatePassword( passLength, passlCase, passuCase, passspecialC, passnumber){
-  }
-  */
-
-  //Connect all functions into one random
-  const randomFunc = {
+    //Connect all functions into one random
+    const randomFunc = {
     lower: getlowerCase,
     upper: getupperCase,
     special: getspecialCharacter,
     number: getnumber
   };
+ 
+
+  // Add event listener to generate button
+  generateBtn.addEventListener("click", () => {
+    const length= lengthEl;
+    const haslowerCase = lowerCaseEl; 
+    const hasupperCase = upperCaseEl; 
+    const hasspecialCharacter = specialCharacterEl; 
+    const hasnumber = numberEl; 
+    passwordText.innerHTML= generatePassword (
+      haslowerCase, hasupperCase, hasspecialCharacter, hasnumber);
+
+  });
+  
+  //Generate password function.
+    function generatePassword (lowerCaseEl, upperCaseEl, specialCharacterEl, numberEl, length) {
+      let generatedPassword = "";
+
+      const typesCount= lowerCaseEl + upperCaseEl + specialCharacterEl + numberEl;
+
+      console.log ("typesCount:", typesCount);
+      const typesArr= [{lowerCaseEl}, {upperCaseEl}, {specialCharacterEl}, {numberEl}].filter(
+        item => Object.values(item)[0]
+        );
+        console.log ("typesArr:", typesArr);
+
+        if(typesCount === 0){
+        return "";
+      }
+     
+      
+      for(let i = 0; i < lengthEl; i += typesCount) {
+        typesArr.forEach((types) => {
+          const funcName = Object.keys(types)[0];
+          generatedPassword += randomFunc[funcName];
+        });
+
+            console.log(generatedPassword);
+      }
+        
+    }
 
 
   // Function to get random lower case.
   function getlowerCase() {
-    var lowerCase= "abcdefghijklmnopqrstuvwxyz";
-    return lowerCase[Math.floor(Math.random() * lowerCase.length)];
+    var lowerCases= "abcdefghijklmnopqrstuvwxyz";
+    return lowerCases[Math.floor(Math.random() * lowerCases.length)];
     
   }
 
   //Function to get random upper case.
   function getupperCase() {
-    var upperCase= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    return upperCase[Math.floor(Math.random() * upperCase.length)];
+    var upperCases= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    return upperCases[Math.floor(Math.random() * upperCases.length)];
   }
 
   //Function to get random special characters.
 
   function getspecialCharacter() {
-    var specialCharacter= "!@#$%^&*()_+?><:;-";
-    return specialCharacter[Math.floor(Math.random() * specialCharacter.length)];
+    var specialCharacters= "!@#$%^&*()_+?><:;-";
+    return specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
   }
 
 
   // Function to get random numbers.
 
   function getnumber() {
-    var number= "0123456789";
-    return number[Math.floor(Math.random() * number.length)];
+    var numbers= "0123456789";
+    return numbers[Math.floor(Math.random() * numbers.length)];
   }
-
-
 
