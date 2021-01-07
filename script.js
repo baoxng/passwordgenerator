@@ -35,6 +35,7 @@ var passLength= ""
       alert (" Password length must be a number from 8 to 128!");
       passLength = prompt ("Select password length, must enter a number between 8 and 128.")
     }
+    console.log (passLength);
 
     //Confrim if lower case is included in password.
     var passlCase = confirm ("Do you want to include lower case letters in your password? Select 'Ok' to include or 'Cancel' to not include in password.")
@@ -44,11 +45,14 @@ var passLength= ""
     // Confirm if upper case is included in password.
     var passuCase = confirm ("Do you want to include upper case letters in your password? Select 'Ok' to include or 'Cancel' to not include in password.")
 
+    console.log(passuCase);
     //Confirm if special character is included in password.
     var passspecialC = confirm ("Do you want to include special characters in your password? Select 'Ok' to include or 'Cancel' to not include in password.")
+    console.log(passspecialC);
 
     //Confirm if numbers are included in password.
     var passnumber = confirm ("Do you want to include numbers in your password? Select 'Ok' to include or 'Cancel' to not include in password.")
+    console.log(passnumber);
 
     alert ("Click on Generate Button to get your password.")
 
