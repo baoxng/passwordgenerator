@@ -1,4 +1,5 @@
 // Assignment Code
+// Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 //character codes 
