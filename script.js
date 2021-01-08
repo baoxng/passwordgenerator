@@ -86,14 +86,16 @@ var numbers= "0123456789";
       }
      
       
-      for(let i = 0; i < lengthEl; i += typesCount) {
+      for(let i = 0; i <= length; i += typesCount) {
         typesArr.forEach((types) => {
-          let funcName = Object.keys(types)[0];
-          console.log(funcName)
+          const funcName = Object.keys(types)[0];
+          console.log("funcName", funcName);
           generatedPassword += randomFunc;
+
+          console.log(generatedPassword)
         });
 
-            console.log(generatedPassword);
+           
       }
         
     }
