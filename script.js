@@ -107,6 +107,8 @@ var numbers= "0123456789";
     return lowerCases[Math.floor(Math.random() * lowerCases.length)];
     
   }
+  
+
 
   //Function to get random upper case.
   function getupperCase() {

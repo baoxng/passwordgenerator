@@ -19,3 +19,8 @@ Follow these links to `Download` and `Install` the following tools in order to s
 ---
 ## Development
 I had lots of difficulties with building the codes that I used. I was looking and researching various hours of the day to make sure the codes were working. This task was harder for me to excute. I had lots of mistakes and I was working really hard and really long hours. I think if I took the time to make this better and excute what I wanted it would be a good lesson in javascript. I had to hard reset my codes because some methods weren't working for me. Overall I did learn a lot of other useful information for coding javascript. I will be implementing my struggles and research this time to future projects.
+
+
+---
+## Live Link
+ [Passwork Generator Link](https://baoxng.github.io/passwordgenerator/)
